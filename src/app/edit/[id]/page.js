@@ -15,7 +15,7 @@ const [image, setImage] = useState("");
 
   useEffect(() => {
     const fetchProject = async () => {
-      const res = await fetch(`http://localhost:5000/api/projects/${id}`);
+      const res = await fetch(`https://portfolio-backend-nx4a.onrender.com/api/projects/${id}`);
       const data = await res.json();
       setTitle(data.title);
       setDescription(data.description);
@@ -31,7 +31,7 @@ const [image, setImage] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch(`http://localhost:5000/api/projects/${id}`, {
+    await fetch(`https://portfolio-backend-nx4a.onrender.com/api/projects/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

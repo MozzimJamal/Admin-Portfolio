@@ -23,7 +23,7 @@ export default function AddProject() {
     formData.append("category", category);
     if (imageFile) formData.append("image", imageFile);
 
-    await fetch("http://localhost:5000/api/projects", {
+    await fetch("https://portfolio-backend-nx4a.onrender.com/api/projects", {
       method: "POST",
       body: formData,
     });

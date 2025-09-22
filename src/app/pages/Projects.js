@@ -7,7 +7,7 @@ export default function ProjectList() {
 
   // Fetch projects
   const fetchProjects = async () => {
-    const res = await fetch("http://localhost:5000/api/projects");
+    const res = await fetch("https://portfolio-backend-nx4a.onrender.com/api/projects");
     const data = await res.json();
     setProjects(data);
   };
@@ -20,7 +20,7 @@ export default function ProjectList() {
   const handleDelete = async (id) => {
     if (!confirm("Are you sure you want to delete this project?")) return;
 
-    await fetch(`http://localhost:5000/api/projects/${id}`, {
+    await fetch(`https://portfolio-backend-nx4a.onrender.com/api/projects/${id}`, {
       method: "DELETE",
     });
 
@@ -61,7 +61,7 @@ export default function ProjectList() {
           {/* Image */}
           <td className="border border-gray-300 px-4 py-2 text-center">
             <img
-              src={`http://localhost:5000${project.image}`}
+              src={`https://portfolio-backend-nx4a.onrender.com${project.image}`}
               alt={project.title}
               className="w-12 h-12 object-cover rounded-md mx-auto"
             />
