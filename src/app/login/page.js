@@ -11,11 +11,13 @@ export default function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("https://portfolio-backend-nx4a.onrender.com/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      });
+     const res = await fetch("https://portfolio-backend-nx4a.onrender.com/api/auth/login", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ username, password }),
+  credentials: "include", // <-- Add this
+});
+
 
       const data = await res.json();
 
